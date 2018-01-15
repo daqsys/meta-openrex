@@ -29,15 +29,15 @@ Copy and paste this into your Linux host machine
     cat > .repo/local_manifests/imx6openrex.xml << EOF
     <?xml version="1.0" encoding="UTF-8"?>
     <manifest>
-     
-      <remote fetch="git://github.com/FEDEVEL" name="fedevel"/>
-     
-      <project remote="fedevel" revision="jethro" name="meta-openrex" path="sources/meta-openrex">
+    
+      <remote fetch="git://github.com/daqsys" name="daqsys"/>
+    
+      <project remote="daqsys" revision="jethro" name="meta-openrex" path="sources/meta-openrex">
         <copyfile src="openrex-setup.sh" dest="openrex-setup.sh"/>
       </project>
     </manifest>
     EOF
- 
+
 ### 4) Sync repositories
     repo sync
  
@@ -52,6 +52,7 @@ Here is a list of 'machine names' which you can use to build OpenRex images. Use
  
  
     imx6q-openrex
+    imx6s-openrex
      
 ### Setup and Build Console image
     MACHINE=<machine name> source setup-environment build-openrex
@@ -59,9 +60,14 @@ Here is a list of 'machine names' which you can use to build OpenRex images. Use
  
 Example:
  
- 
+    For IMX6Q 
+
     MACHINE=imx6q-openrex source setup-environment build-openrex
     MACHINE=imx6q-openrex bitbake core-image-base
+
+    For IMX6S
+    MACHINE=imx6s-openrex source setup-environment build-openrex
+    MACHINE=imx6s-openrex bitbake core-image-base
  
 ### Setup and Build Toolchain    
     MACHINE=<machine name> bitbake core-image-base -c populate_sdk
@@ -85,4 +91,4 @@ To test your uBoot on SD card, plug in the card which you have just created into
     mw.l 0x020d8040 0x2840; mw.l 0x020d8044 0x10000000; reset
  
 # Updating OpenRex
-TO
+TODO
