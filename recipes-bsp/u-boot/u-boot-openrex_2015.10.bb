@@ -25,7 +25,7 @@ SRCBRANCH ??= "jethro"
 SRC_URI = "git://github.com/daqsys/openrex-uboot-v2015.10.git;branch=${SRCBRANCH}"
  
 #SRCREV is the commit number, must be always changed for a new version
-SRCREV = "6165cc2730384f64f5b7f7df40f2ae5947c353a6" 
+SRCREV = "cc596b8ac9054b37fadb75845f3d23b910db9f44" 
  
 S = "${WORKDIR}/git"
  
